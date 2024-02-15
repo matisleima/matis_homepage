@@ -1,0 +1,37 @@
+body {
+    background-image: url('../grassy1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* To prevent scrolling if not needed */
+}
+
+
+#background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../grassy1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.clickable-area {
+    position: absolute;
+    cursor: pointer;
+    /* Add any additional initial styling here */
+    opacity: 0; /* Make the areas invisible initially */
+    transition: opacity 0.0s; /* Smooth transition for the hover effect */
+}
+
+.clickable-area:hover {
+    /* Change appearance on hover */
+    opacity: 1.0; /* Make the area visible on hover */
+    background-color: rgba(255, 255, 255, 0.5); /* Example: semi-transparent white */
+    /* You can also add other styles like border, color changes etc. */
+}
