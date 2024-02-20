@@ -5,12 +5,14 @@ body {
     background-position: center center;
     background-attachment: fixed;
     margin: 0;
+    padding: 0;
     height: 100vh;
     overflow: hidden; /* To prevent scrolling if not needed */
 }
 
 
 #background-container {
+    z-index: 1; /* or higher if needed */
     position: relative;
     width: 100vw;
     height: 100vh;
