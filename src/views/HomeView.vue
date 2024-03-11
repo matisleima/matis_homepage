@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>MAIN</h1>
+    <h1>KODUKE ON TILLUKE</h1>
 
     <div id="background-container">
       <div class="clickable-area" @click="goToView('musicRoute')" style="top: 0.9%; left: 3%; width: 50%; height: 50%;"></div>
