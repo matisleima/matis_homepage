@@ -3,7 +3,7 @@ package ee.leima.matis.backend.business.dto;
 import lombok.Data;
 
 @Data
-public class WorksLiteDTO {
+public class FilterDTO {
 
     private String name;
     private String instruments;
