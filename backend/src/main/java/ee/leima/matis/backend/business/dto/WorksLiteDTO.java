@@ -7,5 +7,5 @@ public class WorksLiteDTO {
 
     private String name;
     private String instruments;
-    private int year;
+    private Integer year;
 }
