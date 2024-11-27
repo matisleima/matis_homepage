@@ -1,5 +1,5 @@
 body {
-    background-image: url('../grassy1.png');
+    background-image: url('../town_square.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -16,8 +16,8 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('../grassy1.png');
-    background-size: cover;
+    background-image: url('../town_square.webp');
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;

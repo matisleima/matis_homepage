@@ -1,22 +1,16 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router'; // import your router configuration
-import VCalendar from 'v-calendar';
-import 'v-calendar/style.css';
-
-// Use plugin with optional defaults
-app.use(VCalendar, {})
-
-
-
 import VueAxios from "vue-axios";
 import axios from "axios";
-import "@/assets/css/my-style.css"
+import "@/assets/css/my-style.css";
 
+// Create the app instance
+const app = createApp(App);
 
+// Use plugins
+app.use(router);
+app.use(VueAxios, axios);
 
-const app = createApp(App)
-
-app.use(router)
-app.use(VueAxios, axios)
-app.mount('#app')
+// Mount the app
+app.mount('#app');

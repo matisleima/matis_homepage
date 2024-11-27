@@ -44,6 +44,9 @@ public class ProductController {
     @GetMapping("/get-products-general")
     @Operation(summary = "This returns a list of products filtered by a general search term")
     public ProductResponse getProductsGeneralSearch(@RequestParam(required = false) String generalTerm) {
+        
+        System.out.println("SEARCHTERM FROM FRONT:" + generalTerm);
+        
         // Return the wrapped response with count and product list
         return productsService.getProducts(generalTerm);
     }
