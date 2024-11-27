@@ -7,12 +7,14 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden; /* To prevent scrolling if not needed */
+    overflow: hidden;
+    /* To prevent scrolling if not needed */
 }
 
 
 #background-container {
-    z-index: 0; /* or higher if needed */
+    z-index: 0;
+    /* or higher if needed */
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -23,17 +25,40 @@ body {
     background-attachment: fixed;
 }
 
+@keyframes blink-highlight {
+    0% {
+        opacity: 0.8; /* Fully visible */
+        background-color: rgba(255, 255, 255, 0.5); /* Highlight color */
+    }
+    10% {
+        opacity: 0; /* Instantly invisible */
+        background-color: transparent; /* No color */
+    }
+    100% {
+        opacity: 0; /* Remain invisible */
+        background-color: transparent; /* No color */
+    }
+}
+
+
+
 .clickable-area {
     position: absolute;
     cursor: pointer;
-    /* Add any additional initial styling here */
-    opacity: 0; /* Make the areas invisible initially */
-    transition: opacity 0.0s; /* Smooth transition for the hover effect */
+    opacity: 0.8;
+}
+
+.clickable-area.blink {
+    animation: blink-highlight 5s infinite;
+    animation-delay: var(--blink-delay);
+    /* Delay is randomized per element */
 }
 
 .clickable-area:hover {
-    /* Change appearance on hover */
-    opacity: 1.0; /* Make the area visible on hover */
-    background-color: rgba(255, 255, 255, 0.5); /* Example: semi-transparent white */
-    /* You can also add other styles like border, color changes etc. */
+    animation: none;
+    /* Stop the blinking animation */
+    opacity: 0.8;
+    /* Maintain visibility */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Preserve whitish color */
 }

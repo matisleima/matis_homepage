@@ -1,26 +1,41 @@
 <template>
   <div>
-    <!--    <h1>HOME</h1>-->
-
     <div id="background-container">
-      <!--PUU-->
-      <div class="clickable-area" @click="goToView('shopRoute')"
-           style="top: 65%; left: 62%; right: 10%; width: 25%; height: 25%;"></div>
+      <div class="clickable-area blink" @click="goToView('shopRoute')" :style="{
+        '--blink-delay': `${blinkDelay}s`,
+        top: '65%',
+        left: '65%',
+        right: '10%',
+        width: '20vw',
+        height: '25vh'
+      }">
+      </div>
+
+      <div class="clickable-area blink" @click="goToView('bioRoute')" :style="{
+        '--blink-delay': `${blinkDelay}s`,
+        top: '53%',
+        left: '46%',
+        right: '40%',
+        width: '40px',
+        height: '60px'
+      }">
+      </div>
     </div>
-
-
   </div>
 </template>
 
 <script>
-
 export default {
+  data() {
+    return {
+      blinkDelay: 2, // Fixed initial delay in seconds
+    };
+  },
   methods: {
     goToView(viewName) {
-      this.$router.push({name: viewName});
+      this.$router.push({ name: viewName });
     }
   }
 }
 
 </script>
-
