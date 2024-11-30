@@ -4,7 +4,6 @@
     <div id="background-container"></div>
 
     <div id="content-container">
-      <h1>GAMES</h1>
 
     </div>
 
@@ -24,7 +23,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 1; /* Ensure this is below the content container */
-  background-image: url('@/assets/chest1.png') !important;
+  background-image: url('@/assets/games2.webp') !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;

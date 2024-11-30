@@ -26,12 +26,12 @@ public class WorksController {
             @RequestParam(required = false) String samples,
             @RequestParam(required = false) String info,
             @RequestParam(required = false) String length,
-            @RequestParam(required = false) Integer year,
-            @RequestParam(required = false) Integer month,
-            @RequestParam(required = false) Integer day,
+            @RequestParam(required = false) String year,
+            @RequestParam(required = false) String month,
+            @RequestParam(required = false) String day,
             @RequestParam(required = false) String style,
             @RequestParam(required = false) String instruments,
-            @RequestParam(required = false) Integer tempo,
+            @RequestParam(required = false) String tempo,
             @RequestParam(required = false) String mood,
             @RequestParam(required = false) Boolean sheet,
             @RequestParam(required = false) String tags,
@@ -43,7 +43,7 @@ public class WorksController {
             @RequestParam(required = false) String premiereLoc,
             @RequestParam(required = false) String alternName,
             @RequestParam(required = false) String band,
-            @RequestParam(required = false) Double authorRating) {
+            @RequestParam(required = false) String authorRating) {
 
         WorkFilterDTO filter = new WorkFilterDTO();
         filter.setName(name);

@@ -40,7 +40,7 @@ public class WorkService {
                 .filter(work -> (filter == null || matchesFilter(work, filter)) &&
                                 (generalTerm == null || matchesGeneralTerm(work, generalTerm)))
                 .collect(Collectors.toList());
-    }    
+    }
 
     private boolean matchesFilter(Work work, WorkFilterDTO filter) {
         return matchesString(work.getName(), filter.getName()) &&
@@ -49,41 +49,41 @@ public class WorkService {
                matchesString(work.getSamples(), filter.getSamples()) &&
                matchesString(work.getInfo(), filter.getInfo()) &&
                matchesString(work.getLength(), filter.getLength()) &&
-               matchesInt(work.getYear(), filter.getYear()) &&
-               matchesInt(work.getMonth(), filter.getMonth()) &&
-               matchesInt(work.getDay(), filter.getDay()) &&
+               matchesString(work.getYear(), filter.getYear()) &&
+               matchesString(work.getMonth(), filter.getMonth()) &&
+               matchesString(work.getDay(), filter.getDay()) &&
                matchesString(work.getStyle(), filter.getStyle()) &&
                matchesString(work.getInstruments(), filter.getInstruments()) &&
-               matchesInt(work.getTempo(), filter.getTempo()) &&
+               matchesString(work.getTempo(), filter.getTempo()) &&
                matchesString(work.getMood(), filter.getMood()) &&
-               matchesExact(work.getSheet(), filter.getSheet()) &&
+               matchesBoolean(work.getSheet(), filter.getSheet()) &&
                matchesString(work.getTags(), filter.getTags()) &&
-               matchesExact(work.getArr(), filter.getArr()) &&
-               matchesExact(work.getCollection(), filter.getCollection()) &&
-               matchesExact(work.getFixedMedia(), filter.getFixedMedia()) &&
+               matchesBoolean(work.getArr(), filter.getArr()) &&
+               matchesBoolean(work.getCollection(), filter.getCollection()) &&
+               matchesBoolean(work.getFixedMedia(), filter.getFixedMedia()) &&
                matchesString(work.getRecBy(), filter.getRecBy()) &&
                matchesString(work.getPremiereBy(), filter.getPremiereBy()) &&
                matchesString(work.getPremiereLoc(), filter.getPremiereLoc()) &&
                matchesString(work.getAlternName(), filter.getAlternName()) &&
                matchesString(work.getBand(), filter.getBand()) &&
-               matchesDouble(work.getAuthorRating(), filter.getAuthorRating());
+               matchesString(work.getAuthorRating(), filter.getAuthorRating());
     }
 
     private boolean matchesGeneralTerm(Work work, String generalTerm) {
         String lowerTerm = generalTerm.toLowerCase();
-    
+
         return matchesString(work.getName(), lowerTerm) ||
                matchesString(work.getMusic(), lowerTerm) ||
                matchesString(work.getLyrics(), lowerTerm) ||
                matchesString(work.getSamples(), lowerTerm) ||
                matchesString(work.getInfo(), lowerTerm) ||
                matchesString(work.getLength(), lowerTerm) ||
-               (work.getYear() != 0 && String.valueOf(work.getYear()).contains(lowerTerm)) ||
-               (work.getMonth() != 0 && String.valueOf(work.getMonth()).contains(lowerTerm)) ||
-               (work.getDay() != 0 && String.valueOf(work.getDay()).contains(lowerTerm)) ||
+               matchesString(work.getYear(), lowerTerm) ||
+               matchesString(work.getMonth(), lowerTerm) ||
+               matchesString(work.getDay(), lowerTerm) ||
                matchesString(work.getStyle(), lowerTerm) ||
                matchesString(work.getInstruments(), lowerTerm) ||
-               (work.getTempo() != 0 && String.valueOf(work.getTempo()).contains(lowerTerm)) ||
+               matchesString(work.getTempo(), lowerTerm) ||
                matchesString(work.getMood(), lowerTerm) ||
                matchesString(work.getTags(), lowerTerm) ||
                matchesString(work.getRecBy(), lowerTerm) ||
@@ -91,23 +91,14 @@ public class WorkService {
                matchesString(work.getPremiereLoc(), lowerTerm) ||
                matchesString(work.getAlternName(), lowerTerm) ||
                matchesString(work.getBand(), lowerTerm) ||
-               (work.getAuthorRating() != 0 && String.valueOf(work.getAuthorRating()).contains(lowerTerm));
+               matchesString(work.getAuthorRating(), lowerTerm);
     }
-    
+
     private boolean matchesString(String workValue, String filterValue) {
         return filterValue == null || (workValue != null && workValue.toLowerCase().contains(filterValue.toLowerCase()));
     }
-    
-    private boolean matchesInt(Integer workValue, Integer filterValue) {
-        return filterValue == null || workValue.equals(filterValue);
+
+    private boolean matchesBoolean(Boolean workValue, Boolean filterValue) {
+        return filterValue == null || (workValue != null && workValue.equals(filterValue));
     }
-    
-    private boolean matchesExact(Object workValue, Object filterValue) {
-        return filterValue == null || workValue.equals(filterValue);
-    }
-    
-    private boolean matchesDouble(Double workValue, Double filterValue) {
-        return filterValue == null || workValue.equals(filterValue);
-    }
-    
 }

@@ -10,24 +10,23 @@ public class Work {
     private String lyrics;
     private String samples;
     private String info;
-    private String length; //time?
-    private int year;
-    private int month;
-    private int day;
+    private String length; // Time as a string
+    private String year; // Changed to string
+    private String month; // Changed to string
+    private String day; // Changed to string
     private String style;
     private String instruments;
-    private int tempo;
+    private String tempo; // Changed to string
     private String mood;
-    private Boolean sheet;
+    private Boolean sheet; // Kept as boolean
     private String tags;
-    private Boolean arr;
-    private Boolean collection;
-    private Boolean fixedMedia;
+    private Boolean arr; // Kept as boolean
+    private Boolean collection; // Kept as boolean
+    private Boolean fixedMedia; // Kept as boolean
     private String recBy;
     private String premiereBy;
     private String premiereLoc;
     private String alternName;
     private String band;
-    private double authorRating;
-
+    private String authorRating; // Changed to string
 }
