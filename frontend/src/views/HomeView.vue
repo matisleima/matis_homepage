@@ -1,6 +1,7 @@
 <template>
   <div>
     <div id="background-container">
+
       <div class="clickable-area blink" @click="goToView('shopRoute')" :style="{
         '--blink-delay': `${blinkDelay}s`,
         top: '65%',
@@ -69,3 +70,7 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+</style>
