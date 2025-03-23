@@ -1,2 +1,0 @@
-product searchis võimalu sisestada min ja max hinda
-wrapi works response countiga
