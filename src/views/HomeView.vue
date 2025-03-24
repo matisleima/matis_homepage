@@ -7,7 +7,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: left;
         padding-top: 5vh;
   padding-bottom: 5vh;">
         Matis Leima alustas muusikuteed Saku Muusikakoolis, jätkas kompositsiooni erialal Georg Otsa nimelises Tallinna
